@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: e98ac070db9df4e02bcc654809f48367
+timeCreated: 1512619288
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/Renaming/BulkRenamePreview.cs
+  uploadId: 482441

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 33845bbdbcb474496b04b7fcdaa3d295
+timeCreated: 1505393155
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Mulligan-UserManual.pdf
+  uploadId: 482441

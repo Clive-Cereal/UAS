@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2032029121b3b4d1fbc4c03916a3d0c9
+timeCreated: 1504150301
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/ExtensionsAndUtilities/ObjectExtensions.cs
+  uploadId: 482441

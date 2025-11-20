@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5168ebbaccc784b089db177c8d480d6c
+timeCreated: 1505362437
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/LICENSE.txt
+  uploadId: 482441

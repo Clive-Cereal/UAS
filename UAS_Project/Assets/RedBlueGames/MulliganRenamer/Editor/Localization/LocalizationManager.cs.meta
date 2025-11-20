@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b93a3df81a055407cb0aeeabc8283d56
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/Localization/LocalizationManager.cs
+  uploadId: 482441

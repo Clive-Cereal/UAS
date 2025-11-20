@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a181f7a63941f4e2c9a08da206a8f979
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/package.json
+  uploadId: 482441
