@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
     [Header("References")]
@@ -24,6 +24,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float crosshairThickness = 2f;
     [SerializeField] private Color crosshairColor = Color.white;
 
+    [Header("Model")]
+    [SerializeField] private Transform model;  
+    [SerializeField] private Vector3 modelRotationOffset; 
+
+    [Header("Visual Tilt")]
+    [SerializeField] private float maxVerticalTilt = 15f;   
+    [SerializeField] private float tiltSmooth = 4f; 
    
     private static Texture2D _lineTex;
 
@@ -32,11 +39,14 @@ public class Player : MonoBehaviour
     private Vector3 currentVelocity = Vector3.zero;
     private float yaw;
     private float pitch;
-
+    private Rigidbody rb;
     void Start()
     {
         if (mainCam == null)
             mainCam = Camera.main;
+            rb = GetComponent<Rigidbody>();
+            rb.useGravity = false; 
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         // default camera 
         if (mainCam != null)
@@ -92,7 +102,7 @@ public class Player : MonoBehaviour
         mainCam.transform.position = desiredPos;
 
         // camera look at player
-        mainCam.transform.LookAt(transform.position + Vector3.up * 1.5f);
+        mainCam.transform.rotation = rot;
     }
     
     // underwater style movement
@@ -130,27 +140,55 @@ public class Player : MonoBehaviour
         );
 
         // apply movement
-        transform.position += currentVelocity * Time.deltaTime;
+        // apply movement via Rigidbody so collisions work
+        rb.MovePosition(rb.position + currentVelocity * Time.deltaTime);
 
-        // rotate player to face movement direction
+
+        // rotate player model to movement direction
         Vector3 flatVel = new Vector3(currentVelocity.x, 0f, currentVelocity.z);
         if (flatVel.sqrMagnitude > 0.01f)
         {
             Quaternion targetRot = Quaternion.LookRotation(flatVel.normalized, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 8f);
         }
+
+        if (model != null)
+        {
+            model.localRotation = Quaternion.Euler(modelRotationOffset);
+            
+        }
+
+            // -------- vertical tilt (visual only) --------
+        float verticalInput = 0f;
+        if (Input.GetKey(KeyCode.LeftControl)) verticalInput = 1f;
+        else if (Input.GetKey(KeyCode.Space)) verticalInput = -1f;
+
+
+        float targetTilt = verticalInput * maxVerticalTilt;
+
+
+        float currentX = transform.localEulerAngles.x;
+        if (currentX > 180f) currentX -= 360f; 
+
+        float newX = Mathf.Lerp(currentX, targetTilt, Time.deltaTime * tiltSmooth);
+
+
+        Vector3 euler = transform.localEulerAngles;
+        euler.x = newX;
+        transform.localEulerAngles = euler;
+
     }
         void OnGUI()
-    {
-    if (Event.current.type != EventType.Repaint) return;
+        {
+        if (Event.current.type != EventType.Repaint) return;
 
-    // texture for drawing lines
-    if (_lineTex == null)
-    {
-        _lineTex = new Texture2D(1, 1);
-        _lineTex.SetPixel(0, 0, Color.white);
-        _lineTex.Apply();
-    }
+         // texture for drawing lines
+        if (_lineTex == null)
+        {
+            _lineTex = new Texture2D(1, 1);
+            _lineTex.SetPixel(0, 0, Color.white);
+            _lineTex.Apply();
+        }
 
     // center of the screen
     float cx = Screen.width * 0.5f;
