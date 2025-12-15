@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     [Header("Visual Tilt")]
     [SerializeField] private float maxVerticalTilt = 15f;   
     [SerializeField] private float tiltSmooth = 4f; 
+
+    public bool moveable = true;
    
     private static Texture2D _lineTex;
 
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
     private float yaw;
     private float pitch;
     private Rigidbody rb;
+
+    public static Player Instance { get; private set; }
     void Start()
     {
         if (mainCam == null)
@@ -59,10 +63,18 @@ public class Player : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     void Update()
     {
+        if (!moveable) return;
+
         HandleCameraOrbit(); // camera orbit around player
         HandleMovement();    // movement
         

@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameState currentGameState => currentState;
     public static string targetScene;
     public static GameState targetState;
-    [SerializeField] private GameObject pauseMenuUI;
 
 
     private void Awake() 
@@ -24,27 +23,28 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        Debug.Log($"[GameManager] Scene loaded: {scene.name}. Target: {targetScene}. Setting state to targetState ({targetState}).");
+        if (!string.IsNullOrEmpty(targetScene) && scene.name == targetScene)
+        {
+            currentState = targetState;
+        }
     }
 
     void Update()
     {
         Initialise();
-        if(Input.GetKeyDown(KeyCode.Escape) && currentState == GameState.Playing)
-        {
-            pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-            if(pauseMenuUI.activeSelf)
-            {
-                currentState = GameState.Paused;
-                Time.timeScale = 0f;
-                Cursor.lockState = CursorLockMode.None;
-            }
-            else
-            {
-                currentState = GameState.Playing;
-                Time.timeScale = 1f;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-        }
+        Debug.Log("[GameManager] Current State: " + currentState);
     }
 
 //---------------------------------------------------------------------
