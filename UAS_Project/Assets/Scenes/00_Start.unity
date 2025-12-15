@@ -223,6 +223,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mainmenu_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 137715545631243816, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 137715545631243816, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944135155332957982, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
+      propertyPath: m_text
+      value: 'Thonis-Heracleion Underwater Heritage Simulator
+
+        Ver 0.0.2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944135155332957982, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
+      propertyPath: m_fontSize
+      value: 53.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944135155332957982, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 53.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4017559665412250266, guid: 35b56edfde49e6d40b2fdba70e1939d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1

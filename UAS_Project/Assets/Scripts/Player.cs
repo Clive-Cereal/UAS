@@ -65,11 +65,10 @@ public class Player : MonoBehaviour
     {
         HandleCameraOrbit(); // camera orbit around player
         HandleMovement();    // movement
-                             //HOMEWORK
-                             //Control : wasd + space(ascend) + ctrl(descend) , camera direction to mouse position.
-                             //If you can (no pressure) try making movement more 'underwater' like slowly sliding a bit after move
-
+        
         ray = mainCam.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+
+        Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.yellow);
 
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {

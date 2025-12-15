@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameState currentGameState => currentState;
     public static string targetScene;
     public static GameState targetState;
+    [SerializeField] private GameObject pauseMenuUI;
 
 
     private void Awake() 
@@ -28,7 +29,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Initialise();
-        //Pause();
+        if(Input.GetKeyDown(KeyCode.Escape) && currentState == GameState.Playing)
+        {
+            pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
+            if(pauseMenuUI.activeSelf)
+            {
+                currentState = GameState.Paused;
+                Time.timeScale = 0f;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                currentState = GameState.Playing;
+                Time.timeScale = 1f;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
     }
 
 //---------------------------------------------------------------------
@@ -47,6 +63,12 @@ public class GameManager : MonoBehaviour
         targetState = stateName;
 
         SceneManager.LoadScene("_Loading");
+    }
+
+    public void ToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneLoader("00_Start", GameState.Menu);
     }
 //-------------------FOR UI BUTTONS------------------------------------
 

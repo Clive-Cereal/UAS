@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f17cb76a7dac7408bf7329f283f531, type: 3}
+  m_Name: IE_OsirisSanctuary
+  m_EditorClassIdentifier: 
+  title: Sanctuary of Osiris
+  description: 'Four large and elaborate statuettes of Osiris were found
+
+    at
+    the edge of the North Canal in the
+
+    northeast harbour associated with
+
+    monumental
+    sandstone architectural
+
+    elements. This suggests that in this location may
+    have been a sanctuary or a
+
+    pier connected to the worship of Osiris.'
