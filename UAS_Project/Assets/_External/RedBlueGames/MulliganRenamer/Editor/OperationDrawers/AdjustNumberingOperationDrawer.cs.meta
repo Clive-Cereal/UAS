@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 60813a4ed56d1425e9d44d7966e374e2
+timeCreated: 1523819846
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/OperationDrawers/AdjustNumberingOperationDrawer.cs
+  uploadId: 482441

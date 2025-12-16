@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 239ab2ce863ee4506b29f74add89aa3f
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/ADF-RBG.Mulligan.asmdef
+  uploadId: 482441

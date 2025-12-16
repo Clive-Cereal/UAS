@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 31a9e597c19e64f5587de05792930d3b
+timeCreated: 1523819846
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/OperationDrawers/AddStringOperationDrawer.cs
+  uploadId: 482441

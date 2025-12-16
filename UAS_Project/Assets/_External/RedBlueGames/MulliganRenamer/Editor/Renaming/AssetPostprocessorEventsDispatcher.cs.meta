@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 8895531d9d2f442ed9be4cdf8eafd99a
+timeCreated: 1514578570
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 99843
+  packageName: Mulligan Renamer
+  packageVersion: 1.7.8
+  assetPath: Assets/RedBlueGames/MulliganRenamer/Editor/Renaming/AssetPostprocessorEventsDispatcher.cs
+  uploadId: 482441
